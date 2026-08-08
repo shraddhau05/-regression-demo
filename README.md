@@ -1,5 +1,4 @@
-# -regression-demo
-=======
+
 # Regression Test Suite Generator — Local Demo
 
 A small local app that turns a user story + acceptance criteria into a structured, prioritized regression test suite, generated live by Claude. Matches the "Requirements → Regression Test Suite" flow: paste input on the left, Claude processes it, structured output table appears on the right.
