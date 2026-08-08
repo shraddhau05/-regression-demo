@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # -regression-demo
 =======
 # Regression Test Suite Generator — Local Demo
