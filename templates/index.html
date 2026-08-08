@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regression Test Suite Generator — Powered by Claude</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page">
+
+    <header class="header">
+      <div class="header-icon" aria-hidden="true">🤖</div>
+      <div>
+        <h1>From Requirements to Regression Test Suite</h1>
+        <p class="subtitle">A simple AI-assisted QA demo that shows how modern teams can turn requirements into better regression tests — <span class="accent">powered by Claude</span></p>
+      </div>
+    </header>
+
+    <section class="hero-card" aria-label="AI in QA overview">
+      <div>
+        <span class="eyebrow eyebrow-input">Why this matters</span>
+        <h2>How AI helps QA teams</h2>
+        <p>AI can help testers move faster from requirements to test ideas, improve coverage for happy paths, negative cases, and edge cases, and keep the human QA engineer focused on judgment, risk, and real-world validation.</p>
+      </div>
+      <div class="hero-actions">
+        <button id="load-sample-btn" class="secondary-btn" type="button">Load sample story</button>
+      </div>
+    </section>
+
+    <main class="workspace">
+
+      <section class="panel panel-input">
+        <span class="eyebrow eyebrow-input">Input</span>
+        <h2>User Story &amp; Acceptance Criteria</h2>
+
+        <label for="user-story">User story</label>
+        <textarea id="user-story" rows="4" placeholder="As a registered user, I want to reset my password, so that I can regain access to my account."></textarea>
+
+        <label for="acceptance-criteria">Acceptance criteria</label>
+        <textarea id="acceptance-criteria" rows="6" placeholder="- User should receive reset link on registered email&#10;- Link should be valid for 15 mins&#10;- User should be able to set a new password&#10;- Show appropriate messages for success and failure scenarios"></textarea>
+
+        <button id="generate-btn" class="generate-btn" type="button">Generate Test Suite</button>
+        <p id="error-msg" class="error-msg" role="alert" hidden></p>
+      </section>
+
+      <div class="connector" id="connector">
+        <div class="connector-icon" id="connector-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <span id="connector-label">Claude processes &amp; generates</span>
+      </div>
+
+      <section class="panel panel-output">
+        <span class="eyebrow eyebrow-output">Output</span>
+        <h2>AI-Generated Regression Test Suite</h2>
+
+        <div id="output-empty" class="output-empty">Your regression suite will appear here.</div>
+        <div id="output-summary" class="output-summary" hidden></div>
+
+        <div id="output-table-wrap" class="table-wrap" hidden>
+          <table id="output-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Test Scenario</th>
+                <th>Type</th>
+                <th>Precondition</th>
+                <th>Priority</th>
+                <th>Expected Result</th>
+              </tr>
+            </thead>
+            <tbody id="output-tbody"></tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <section class="insight-grid" aria-label="QA use cases">
+      <article class="insight-card">
+        <h3>1. Speed up test design</h3>
+        <p>Turn a requirement into a structured regression suite in seconds instead of starting from a blank page.</p>
+      </article>
+      <article class="insight-card">
+        <h3>2. Improve coverage</h3>
+        <p>Prompt the model to include positive, negative, and edge scenarios so testing is more complete.</p>
+      </article>
+      <article class="insight-card">
+        <h3>3. Keep humans in control</h3>
+        <p>QA engineers still review, refine, and validate the suggestions before they become part of the test plan.</p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>AI doesn't replace QA expertise — it amplifies it. <span class="accent">Better tests. Faster. Smarter.</span></p>
+    </footer>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
